@@ -42,8 +42,9 @@ class DefaultController extends Controller
      * Action arguments mapped with url parameters using reflection,
      * we can add extra $_GET parameters here (page)
      */
-    public function advancedRoutingAction($id, $slug, $page = 1, $_format)
+    public function advancedRoutingAction(Request $request, $id, $slug, $_format)
     {
+        $page = $request->query->get('page', 1);
         switch ($_format) {
             case 'json':
                 return new JsonResponse(['id' => $id, 'slug' => $slug, 'page' => $page]);

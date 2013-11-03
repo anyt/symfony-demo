@@ -49,7 +49,7 @@ wo_controller_url_redirect:
         permanent: true
 
 advanced_route:
-    path: /advanced-route/id{id}/{slug}.{_format}
+    path: '/advanced-route/id{id}/{slug}.{_format}'
     defaults:
         _controller: AnytDemoBundle:Default:advancedRouting
         _format: html
