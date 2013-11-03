@@ -39,8 +39,7 @@ class DefaultController extends Controller
     }
 
     /*
-     * Action arguments mapped with url parameters using reflection,
-     * we can add extra $_GET parameters here (page)
+     * Action arguments mapped with url parameters using reflection
      */
     public function advancedRoutingAction(Request $request, $id, $slug, $_format)
     {

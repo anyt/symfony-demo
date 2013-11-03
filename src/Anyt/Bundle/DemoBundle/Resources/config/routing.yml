@@ -56,7 +56,7 @@ advanced_route:
     requirements:
         _format:  html|text|json
         id: '\d+'
-        variable: '[\w-]+'
+        slug: '[\w-]+'
     host: symfony-demo.loc
     schemes: http
     methods: [GET, POST]
