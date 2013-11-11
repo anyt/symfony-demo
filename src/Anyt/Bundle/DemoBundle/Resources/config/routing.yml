@@ -1,0 +1,62 @@
+# Front page
+home:
+    path:  /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'AnytDemoBundle:Static:home.html.twig'
+
+# Return Response in controller, simple example
+simple_response:
+    path: /simple-response
+    defaults:
+        _controller: AnytDemoBundle:Default:simpleResponse
+
+# Return Response with rendered template, simple example
+simple_template:
+    path: /simple-template
+    defaults:
+        _controller: AnytDemoBundle:Default:simpleTemplate
+
+# Return Response with rendered template, advanced example
+advanced_template:
+    path: /extended-template
+    defaults:
+        _controller: AnytDemoBundle:Default:extendedTemplate
+
+
+
+# Render template without creating custom controller
+wo_controller_template:
+    path: /wo-controller-template
+    defaults:
+            _controller: FrameworkBundle:Template:template
+            template: 'AnytDemoBundle:Static:woController.html.twig'
+
+# Redirect to another route without custom controller
+wo_controller_redirect:
+    path: /wo-controller-route-redirect
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: simple_template
+        permanent: true
+
+# Redirect to another url without custom controller
+wo_controller_url_redirect:
+    path: /wo-controller-url-redirect
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: "http://symfony.com"
+        permanent: true
+
+advanced_route:
+    path: '/advanced-route/id{id}/{slug}.{_format}'
+    defaults:
+        _controller: AnytDemoBundle:Default:advancedRouting
+        _format: html
+    requirements:
+        _format:  html|text|json
+        id: '\d+'
+        slug: '[\w-]+'
+    host: symfony-demo.loc
+    schemes: http
+    methods: [GET, POST]

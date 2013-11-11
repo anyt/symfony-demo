@@ -1,0 +1,69 @@
+{% extends 'AnytDemoBundle::layout.html.twig' %}
+
+{% block title %}
+    Extended Template
+{% endblock %}
+
+{% block stylesheets %}
+    <style type="text/css">
+        .first-item {
+            color: green;
+        }
+
+        .last-item {
+            color: blue;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h3>Using twig filters</h3>
+    <h4>single</h4>
+    <p>{{ upper_case|upper }}</p>
+    <h4>multiple</h4>
+    <p>{{ timestamp|date('r')|lower }}</p>
+
+
+    <h3>Testing twig output escaping</h3>
+    <h4>escaped by default</h4>
+    <p>{{ html }}</p>
+    <h4>but we can make things raw</h4>
+    <p>{{ html|raw }}</p>
+
+    <h3>Links</h3>
+    <h4>relative</h4>
+    {{ path('home') }}
+    <h4>absolute</h4>
+    {{ url('home') }}
+
+    <h3>If statement</h3>
+    <h4>block</h4>
+    <p>
+        {% if bool %}
+            true
+        {% else %}
+            false
+        {% endif %}
+    </p>
+    <h4>inline</h4>
+    <p>{{ bool ? 'fact' : 'fiction' }}</p>
+
+    <h3>Apply filter to array</h3>
+    <p>{{ array|join(', ') }}</p>
+
+    <h3>Print object values</h3>
+    <p>{{ object.host }}<br>
+
+    <h3>Debug</h3>
+    <pre>{{ dump(object.clientIps) }}</pre>
+
+    <h3>Include assets</h3>
+    <img width="200" src="{{ asset('bundles/anytdemo/images/tree.jpg') }}" alt=""/>
+
+    <h3>Including other template</h3>
+    {% include 'AnytDemoBundle:Default:extendedTemplatePart.html.twig' with {'items': object.headers} %}
+
+    <h3>Include another controller (sub request)</h3>
+    {{ render(controller('AnytDemoBundle:Default:simpleResponse')) }}
+
+{% endblock %}

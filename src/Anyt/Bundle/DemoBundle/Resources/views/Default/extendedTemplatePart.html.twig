@@ -1,0 +1,18 @@
+<h4>Simple Loop on object property</h4>
+<ul>
+    {% for key, item in items %}
+        <li class="
+            {% if loop.first %}
+                    first-item
+            {% elseif loop.last %}
+                    last-item
+            {% endif %}
+                    ">
+            #{{ loop.index }}
+
+            <strong>{{ key }}</strong>
+            {{ item[0] }}
+
+        </li>
+    {% endfor %}
+</ul>
