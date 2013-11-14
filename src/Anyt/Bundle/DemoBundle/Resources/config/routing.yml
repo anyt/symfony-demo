@@ -60,3 +60,11 @@ advanced_route:
     host: symfony-demo.loc
     schemes: http
     methods: [GET, POST]
+
+
+generated_posts:
+    path: '/generated-posts/{count}'
+    defaults:
+        _controller: AnytDemoBundle:Post:generatedPosts
+    requirements:
+        count: '\d+'

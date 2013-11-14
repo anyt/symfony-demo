@@ -3,8 +3,52 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4563ec97d0641fa1225092602b87fa12",
+    "hash": "38b20e7fe2ae33cd2dd353441899000b",
     "packages": [
+        {
+            "name": "apoutchika/loremipsum-bundle",
+            "version": "dev-master",
+            "target-dir": "Apoutchika/LoremIpsumBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/apoutchika/LoremIpsumBundle.git",
+                "reference": "d44b08590079e4fc1f475226cb66012212160e06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/apoutchika/LoremIpsumBundle/zipball/d44b08590079e4fc1f475226cb66012212160e06",
+                "reference": "d44b08590079e4fc1f475226cb66012212160e06",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.0,<2.4-dev"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Apoutchika\\LoremIpsumBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Julien Philippon",
+                    "email": "contact@julienphilippon.fr"
+                }
+            ],
+            "description": "Generate paragraphs, sentences and words for your development.",
+            "keywords": [
+                "data",
+                "fixtures",
+                "ipsum",
+                "lorem"
+            ],
+            "time": "2013-03-17 11:01:51"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.1.2",
@@ -1786,7 +1830,8 @@
         "knplabs/knp-menu": 20,
         "knplabs/knp-menu-bundle": 20,
         "mopa/bootstrap-bundle": 20,
-        "twbs/bootstrap": 20
+        "twbs/bootstrap": 20,
+        "apoutchika/loremipsum-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

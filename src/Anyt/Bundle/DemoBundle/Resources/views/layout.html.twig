@@ -1,1 +1,5 @@
 {% extends '::base.html.twig' %}
+
+{% block footer %}
+    {% include 'AnytDemoBundle::footer.html.twig' with {'year': 'now'|date('Y')} %}
+{% endblock %}

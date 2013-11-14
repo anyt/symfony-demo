@@ -25,6 +25,16 @@ class MenuBuilder extends ContainerAware
             )
         );
 
+        $menu->addChild(
+            'Homework #5',
+            array(
+                'route' => 'generated_posts',
+                'routeParameters' => array(
+                    'count' => rand(1, 10)
+                )
+            )
+        );
+
 
         return $menu;
     }
