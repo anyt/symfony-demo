@@ -1,12 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-</head>
-<body>
-{% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
-</body>
-</html>
+{% extends 'MopaBootstrapBundle::base.html.twig' %}
+
+{% block head_style %}
+    {% stylesheets
+    '@MopaBootstrapBundle/Resources/public/bootstrap/less/bootstrap.less'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen"/>
+    {% endstylesheets %}
+{% endblock head_style %}
+
+
+{% block navbar %}
+    {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: false } %}
+        {% block brand %}
+            <a href="{{ path('home') }}" class="navbar-brand">Symfony demo</a>
+        {% endblock %}
+
+        {% block menu %}
+            {{ mopa_bootstrap_menu('AnytDemoBundle:MenuBuilder:mainMenu') }}
+        {% endblock %}
+    {% endembed %}
+{% endblock navbar %}
+
+
+{% block title %}
+    Symfony demo
+{% endblock %}
+
+{% block headline %}
+    {{ block('title') }}
+{% endblock%}
+
+
+
+
+{% block footer %}
+{% endblock %}
+
+
+
